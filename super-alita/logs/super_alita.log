@@ -1,0 +1,22 @@
+2025-07-28 12:43:05,460 - src.main - INFO - Initializing Super Alita agent...
+2025-07-28 12:43:05,466 - src.main - INFO - Configuration loaded from src/config/agent.yaml
+2025-07-28 12:43:05,467 - src.main - INFO - Logging configured at level: INFO
+2025-07-28 12:43:05,467 - src.main - INFO - Event bus initialized
+2025-07-28 12:43:05,467 - src.main - INFO - Genealogy tracer initialized
+2025-07-28 12:43:05,468 - src.main - INFO - Registered 5 plugins: ['event_bus', 'semantic_memory', 'semantic_fsm', 'skill_discovery', 'ladder_aog']
+2025-07-28 12:43:05,468 - src.main - INFO - Initializing plugin: event_bus
+2025-07-28 12:43:05,468 - src.main - INFO - Plugin event_bus setup complete
+2025-07-28 12:43:05,468 - src.main - INFO - Initializing plugin: semantic_memory
+2025-07-28 12:43:05,475 - src.plugins.semantic_memory_plugin - INFO - SemanticMemoryPlugin setup complete.
+2025-07-28 12:43:05,475 - src.main - INFO - Plugin semantic_memory setup complete
+2025-07-28 12:43:05,476 - src.main - INFO - Initializing plugin: semantic_fsm
+2025-07-28 12:43:05,499 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-28 12:43:05,500 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-07-28 12:43:09,483 - src.main - INFO - Plugin semantic_fsm setup complete
+2025-07-28 12:43:09,483 - src.main - INFO - Initializing plugin: skill_discovery
+2025-07-28 12:43:09,484 - src.main - INFO - Plugin skill_discovery setup complete
+2025-07-28 12:43:09,484 - src.main - INFO - Initializing plugin: ladder_aog
+2025-07-28 12:43:09,488 - src.plugins.ladder_aog_plugin - INFO - Initialized AOG graphs for task planning domain
+2025-07-28 12:43:09,488 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin initialized
+2025-07-28 12:43:09,488 - src.main - INFO - Plugin ladder_aog setup complete
+2025-07-28 12:43:09,489 - src.main - INFO - Super Alita agent initialized successfully
