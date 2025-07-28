@@ -51,6 +51,16 @@ class SemanticMemoryPlugin(PluginInterface):
         self._event_bus = event_bus
         self._store = store
         self._config = config
+        
+        # Configure Gemini API if key is provided
+        import os
+        gemini_api_key = self._config.get("gemini_api_key") or os.getenv("GEMINI_API_KEY")
+        if gemini_api_key:
+            genai.configure(api_key=gemini_api_key)
+            logger.info("Gemini API configured for real embeddings")
+        else:
+            logger.warning("No Gemini API key found - will use fallback embeddings")
+            
         logger.info("SemanticMemoryPlugin setup complete.")
 
     async def start(self) -> None:

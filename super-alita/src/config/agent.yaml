@@ -23,6 +23,7 @@ plugins:
     enabled: true
     db_path: "./data/chroma_db"
     collection_name: "alita_memory"
+    embedding_model: "models/text-embedding-004"
     gemini_api_key: "${GEMINI_API_KEY}"  # Set via environment variable
     
   semantic_fsm:

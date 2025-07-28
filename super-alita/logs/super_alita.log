@@ -20,3 +20,241 @@
 2025-07-28 12:43:09,488 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin initialized
 2025-07-28 12:43:09,488 - src.main - INFO - Plugin ladder_aog setup complete
 2025-07-28 12:43:09,489 - src.main - INFO - Super Alita agent initialized successfully
+2025-07-28 13:03:47,279 - src.main - INFO - Initializing Super Alita agent...
+2025-07-28 13:03:47,284 - src.main - INFO - Configuration loaded from src/config/agent.yaml
+2025-07-28 13:03:47,284 - src.main - INFO - Logging configured at level: INFO
+2025-07-28 13:03:47,285 - src.main - INFO - Event bus initialized
+2025-07-28 13:03:47,285 - src.main - INFO - Genealogy tracer initialized
+2025-07-28 13:03:47,285 - src.main - INFO - Registered 5 plugins: ['event_bus', 'semantic_memory', 'semantic_fsm', 'skill_discovery', 'ladder_aog']
+2025-07-28 13:03:47,286 - src.main - INFO - Initializing plugin: event_bus
+2025-07-28 13:03:47,286 - src.main - INFO - Plugin event_bus setup complete
+2025-07-28 13:03:47,286 - src.main - INFO - Initializing plugin: semantic_memory
+2025-07-28 13:03:47,286 - src.plugins.semantic_memory_plugin - INFO - SemanticMemoryPlugin setup complete.
+2025-07-28 13:03:47,286 - src.main - INFO - Plugin semantic_memory setup complete
+2025-07-28 13:03:47,286 - src.main - INFO - Initializing plugin: semantic_fsm
+2025-07-28 13:03:47,310 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-28 13:03:47,310 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-07-28 13:03:51,473 - src.main - INFO - Plugin semantic_fsm setup complete
+2025-07-28 13:03:51,474 - src.main - INFO - Initializing plugin: skill_discovery
+2025-07-28 13:03:51,474 - src.main - INFO - Plugin skill_discovery setup complete
+2025-07-28 13:03:51,474 - src.main - INFO - Initializing plugin: ladder_aog
+2025-07-28 13:03:51,477 - src.plugins.ladder_aog_plugin - INFO - Initialized AOG graphs for task planning domain
+2025-07-28 13:03:51,477 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin initialized
+2025-07-28 13:03:51,477 - src.main - INFO - Plugin ladder_aog setup complete
+2025-07-28 13:03:51,477 - src.main - INFO - Super Alita agent initialized successfully
+2025-07-28 13:06:48,745 - src.main - INFO - Initializing Super Alita agent...
+2025-07-28 13:06:48,750 - src.main - INFO - Configuration loaded from src/config/agent.yaml
+2025-07-28 13:06:48,751 - src.main - INFO - Logging configured at level: INFO
+2025-07-28 13:06:48,752 - src.main - INFO - Event bus initialized
+2025-07-28 13:06:48,752 - src.main - INFO - Genealogy tracer initialized
+2025-07-28 13:06:48,753 - src.main - INFO - Registered 5 plugins: ['event_bus', 'semantic_memory', 'semantic_fsm', 'skill_discovery', 'ladder_aog']
+2025-07-28 13:06:48,753 - src.main - INFO - Initializing plugin: event_bus
+2025-07-28 13:06:48,753 - src.main - INFO - Plugin event_bus setup complete
+2025-07-28 13:06:48,753 - src.main - INFO - Initializing plugin: semantic_memory
+2025-07-28 13:06:48,753 - src.plugins.semantic_memory_plugin - INFO - SemanticMemoryPlugin setup complete.
+2025-07-28 13:06:48,754 - src.main - INFO - Plugin semantic_memory setup complete
+2025-07-28 13:06:48,754 - src.main - INFO - Initializing plugin: semantic_fsm
+2025-07-28 13:06:48,778 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-28 13:06:48,778 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-07-28 13:06:52,778 - src.main - INFO - Plugin semantic_fsm setup complete
+2025-07-28 13:06:52,779 - src.main - INFO - Initializing plugin: skill_discovery
+2025-07-28 13:06:52,779 - src.main - INFO - Plugin skill_discovery setup complete
+2025-07-28 13:06:52,779 - src.main - INFO - Initializing plugin: ladder_aog
+2025-07-28 13:06:52,781 - src.plugins.ladder_aog_plugin - INFO - Initialized AOG graphs for task planning domain
+2025-07-28 13:06:52,781 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin initialized
+2025-07-28 13:06:52,781 - src.main - INFO - Plugin ladder_aog setup complete
+2025-07-28 13:06:52,781 - src.main - INFO - Super Alita agent initialized successfully
+2025-07-28 13:06:52,782 - src.main - INFO - Starting Super Alita agent...
+2025-07-28 13:06:52,782 - src.main - INFO - Starting plugin: event_bus
+2025-07-28 13:06:52,782 - src.plugins.event_bus_plugin - INFO - EventBus plugin started (passive component).
+2025-07-28 13:06:52,782 - src.main - INFO - Plugin event_bus started successfully
+2025-07-28 13:06:52,782 - src.main - INFO - Starting plugin: semantic_memory
+2025-07-28 13:06:52,947 - src.plugins.semantic_memory_plugin - INFO - Connected to ChromaDB collection 'alita_memory' at './data/chroma_db'
+2025-07-28 13:06:52,948 - src.main - INFO - Plugin semantic_memory started successfully
+2025-07-28 13:06:52,948 - src.main - INFO - Starting plugin: semantic_fsm
+2025-07-28 13:06:52,948 - src.main - INFO - Plugin semantic_fsm started successfully
+2025-07-28 13:06:52,948 - src.main - INFO - Starting plugin: skill_discovery
+2025-07-28 13:06:52,949 - src.main - INFO - Plugin skill_discovery started successfully
+2025-07-28 13:06:52,949 - src.main - INFO - Starting plugin: ladder_aog
+2025-07-28 13:06:52,949 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin started
+2025-07-28 13:06:52,949 - src.main - INFO - Plugin ladder_aog started successfully
+2025-07-28 13:06:52,949 - src.main - INFO - Super Alita agent started successfully
+2025-07-28 13:07:33,687 - src.main - INFO - Initializing Super Alita agent...
+2025-07-28 13:07:33,692 - src.main - INFO - Configuration loaded from src/config/agent.yaml
+2025-07-28 13:07:33,693 - src.main - INFO - Logging configured at level: INFO
+2025-07-28 13:07:33,693 - src.main - INFO - Event bus initialized
+2025-07-28 13:07:33,693 - src.main - INFO - Genealogy tracer initialized
+2025-07-28 13:07:33,694 - src.main - INFO - Registered 5 plugins: ['event_bus', 'semantic_memory', 'semantic_fsm', 'skill_discovery', 'ladder_aog']
+2025-07-28 13:07:33,694 - src.main - INFO - Initializing plugin: event_bus
+2025-07-28 13:07:33,694 - src.main - INFO - Plugin event_bus setup complete
+2025-07-28 13:07:33,694 - src.main - INFO - Initializing plugin: semantic_memory
+2025-07-28 13:07:33,694 - src.plugins.semantic_memory_plugin - INFO - SemanticMemoryPlugin setup complete.
+2025-07-28 13:07:33,695 - src.main - INFO - Plugin semantic_memory setup complete
+2025-07-28 13:07:33,695 - src.main - INFO - Initializing plugin: semantic_fsm
+2025-07-28 13:07:33,715 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-28 13:07:33,715 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-07-28 13:07:37,502 - src.main - INFO - Plugin semantic_fsm setup complete
+2025-07-28 13:07:37,503 - src.main - INFO - Initializing plugin: skill_discovery
+2025-07-28 13:07:37,503 - src.main - INFO - Plugin skill_discovery setup complete
+2025-07-28 13:07:37,503 - src.main - INFO - Initializing plugin: ladder_aog
+2025-07-28 13:07:37,505 - src.plugins.ladder_aog_plugin - INFO - Initialized AOG graphs for task planning domain
+2025-07-28 13:07:37,505 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin initialized
+2025-07-28 13:07:37,505 - src.main - INFO - Plugin ladder_aog setup complete
+2025-07-28 13:07:37,506 - src.main - INFO - Super Alita agent initialized successfully
+2025-07-28 13:07:37,506 - src.main - INFO - Starting Super Alita agent...
+2025-07-28 13:07:37,506 - src.main - INFO - Starting plugin: event_bus
+2025-07-28 13:07:37,506 - src.plugins.event_bus_plugin - INFO - EventBus plugin started (passive component).
+2025-07-28 13:07:37,506 - src.main - INFO - Plugin event_bus started successfully
+2025-07-28 13:07:37,507 - src.main - INFO - Starting plugin: semantic_memory
+2025-07-28 13:07:37,659 - src.plugins.semantic_memory_plugin - INFO - Connected to ChromaDB collection 'alita_memory' at './data/chroma_db'
+2025-07-28 13:07:37,659 - src.main - INFO - Plugin semantic_memory started successfully
+2025-07-28 13:07:37,659 - src.main - INFO - Starting plugin: semantic_fsm
+2025-07-28 13:07:37,660 - src.main - INFO - Plugin semantic_fsm started successfully
+2025-07-28 13:07:37,660 - src.main - INFO - Starting plugin: skill_discovery
+2025-07-28 13:07:37,660 - src.main - INFO - Plugin skill_discovery started successfully
+2025-07-28 13:07:37,660 - src.main - INFO - Starting plugin: ladder_aog
+2025-07-28 13:07:37,661 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin started
+2025-07-28 13:07:37,661 - src.main - INFO - Plugin ladder_aog started successfully
+2025-07-28 13:07:37,661 - src.main - INFO - Super Alita agent started successfully
+2025-07-28 13:07:37,662 - src.main - INFO - Shutting down Super Alita agent...
+2025-07-28 13:07:37,671 - src.main - INFO - Stopping plugin: event_bus
+2025-07-28 13:07:37,671 - src.plugins.event_bus_plugin - INFO - Shutting down EventBus plugin...
+2025-07-28 13:07:37,671 - src.main - INFO - Plugin event_bus stopped
+2025-07-28 13:07:37,672 - src.main - INFO - Stopping plugin: semantic_memory
+2025-07-28 13:07:37,672 - src.plugins.semantic_memory_plugin - INFO - SemanticMemoryPlugin shutting down.
+2025-07-28 13:07:37,672 - src.main - INFO - Plugin semantic_memory stopped
+2025-07-28 13:07:37,672 - src.main - INFO - Stopping plugin: semantic_fsm
+2025-07-28 13:07:37,672 - src.main - INFO - Plugin semantic_fsm stopped
+2025-07-28 13:07:37,672 - src.main - INFO - Stopping plugin: skill_discovery
+2025-07-28 13:07:37,673 - src.main - INFO - Plugin skill_discovery stopped
+2025-07-28 13:07:37,673 - src.main - INFO - Stopping plugin: ladder_aog
+2025-07-28 13:07:37,673 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin shut down
+2025-07-28 13:07:37,673 - src.main - INFO - Plugin ladder_aog stopped
+2025-07-28 13:07:37,686 - src.main - INFO - Final genealogy exported to data\genealogy\final_genealogy_20250728_170737.graphml
+2025-07-28 13:07:37,686 - src.main - INFO - Super Alita agent shutdown complete
+2025-07-28 13:10:34,875 - src.main - INFO - Initializing Super Alita agent...
+2025-07-28 13:10:34,881 - src.main - INFO - Configuration loaded from src/config/agent.yaml
+2025-07-28 13:10:34,881 - src.main - INFO - Logging configured at level: INFO
+2025-07-28 13:10:34,882 - src.main - INFO - Event bus initialized
+2025-07-28 13:10:34,882 - src.main - INFO - Genealogy tracer initialized
+2025-07-28 13:10:34,882 - src.main - INFO - Registered 5 plugins: ['event_bus', 'semantic_memory', 'semantic_fsm', 'skill_discovery', 'ladder_aog']
+2025-07-28 13:10:34,883 - src.main - INFO - Initializing plugin: event_bus
+2025-07-28 13:10:34,883 - src.main - INFO - Plugin event_bus setup complete
+2025-07-28 13:10:34,883 - src.main - INFO - Initializing plugin: semantic_memory
+2025-07-28 13:10:34,883 - src.plugins.semantic_memory_plugin - INFO - Gemini API configured for real embeddings
+2025-07-28 13:10:34,883 - src.plugins.semantic_memory_plugin - INFO - SemanticMemoryPlugin setup complete.
+2025-07-28 13:10:34,884 - src.main - INFO - Plugin semantic_memory setup complete
+2025-07-28 13:10:34,884 - src.main - INFO - Initializing plugin: semantic_fsm
+2025-07-28 13:10:34,906 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-28 13:10:34,906 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-07-28 13:10:38,643 - src.main - INFO - Plugin semantic_fsm setup complete
+2025-07-28 13:10:38,644 - src.main - INFO - Initializing plugin: skill_discovery
+2025-07-28 13:10:38,644 - src.main - INFO - Plugin skill_discovery setup complete
+2025-07-28 13:10:38,644 - src.main - INFO - Initializing plugin: ladder_aog
+2025-07-28 13:10:38,646 - src.plugins.ladder_aog_plugin - INFO - Initialized AOG graphs for task planning domain
+2025-07-28 13:10:38,646 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin initialized
+2025-07-28 13:10:38,646 - src.main - INFO - Plugin ladder_aog setup complete
+2025-07-28 13:10:38,647 - src.main - INFO - Super Alita agent initialized successfully
+2025-07-28 13:10:38,647 - src.main - INFO - Starting Super Alita agent...
+2025-07-28 13:10:38,647 - src.main - INFO - Starting plugin: event_bus
+2025-07-28 13:10:38,647 - src.plugins.event_bus_plugin - INFO - EventBus plugin started (passive component).
+2025-07-28 13:10:38,647 - src.main - INFO - Plugin event_bus started successfully
+2025-07-28 13:10:38,648 - src.main - INFO - Starting plugin: semantic_memory
+2025-07-28 13:10:38,800 - src.plugins.semantic_memory_plugin - INFO - Connected to ChromaDB collection 'alita_memory' at './data/chroma_db'
+2025-07-28 13:10:38,801 - src.main - INFO - Plugin semantic_memory started successfully
+2025-07-28 13:10:38,801 - src.main - INFO - Starting plugin: semantic_fsm
+2025-07-28 13:10:38,801 - src.main - INFO - Plugin semantic_fsm started successfully
+2025-07-28 13:10:38,802 - src.main - INFO - Starting plugin: skill_discovery
+2025-07-28 13:10:38,802 - src.main - INFO - Plugin skill_discovery started successfully
+2025-07-28 13:10:38,802 - src.main - INFO - Starting plugin: ladder_aog
+2025-07-28 13:10:38,802 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin started
+2025-07-28 13:10:38,803 - src.main - INFO - Plugin ladder_aog started successfully
+2025-07-28 13:10:38,803 - src.main - INFO - Super Alita agent started successfully
+2025-07-28 13:10:39,149 - src.plugins.semantic_memory_plugin - ERROR - Gemini embedding failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-07-28 13:10:39,150 - src.main - INFO - Shutting down Super Alita agent...
+2025-07-28 13:10:39,151 - src.main - INFO - Stopping plugin: event_bus
+2025-07-28 13:10:39,151 - src.plugins.event_bus_plugin - INFO - Shutting down EventBus plugin...
+2025-07-28 13:10:39,151 - src.main - INFO - Plugin event_bus stopped
+2025-07-28 13:10:39,151 - src.main - INFO - Stopping plugin: semantic_memory
+2025-07-28 13:10:39,152 - src.plugins.semantic_memory_plugin - INFO - SemanticMemoryPlugin shutting down.
+2025-07-28 13:10:39,152 - src.main - INFO - Plugin semantic_memory stopped
+2025-07-28 13:10:39,152 - src.main - INFO - Stopping plugin: semantic_fsm
+2025-07-28 13:10:39,152 - src.main - INFO - Plugin semantic_fsm stopped
+2025-07-28 13:10:39,152 - src.main - INFO - Stopping plugin: skill_discovery
+2025-07-28 13:10:39,153 - src.main - INFO - Plugin skill_discovery stopped
+2025-07-28 13:10:39,153 - src.main - INFO - Stopping plugin: ladder_aog
+2025-07-28 13:10:39,153 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin shut down
+2025-07-28 13:10:39,153 - src.main - INFO - Plugin ladder_aog stopped
+2025-07-28 13:10:39,167 - src.main - INFO - Final genealogy exported to data\genealogy\final_genealogy_20250728_171039.graphml
+2025-07-28 13:10:39,167 - src.main - INFO - Super Alita agent shutdown complete
+2025-07-28 13:11:58,573 - src.main - INFO - Initializing Super Alita agent...
+2025-07-28 13:11:58,577 - src.main - INFO - Configuration loaded from src/config/agent.yaml
+2025-07-28 13:11:58,578 - src.main - INFO - Logging configured at level: INFO
+2025-07-28 13:11:58,578 - src.main - INFO - Event bus initialized
+2025-07-28 13:11:58,578 - src.main - INFO - Genealogy tracer initialized
+2025-07-28 13:11:58,578 - src.main - INFO - Registered 5 plugins: ['event_bus', 'semantic_memory', 'semantic_fsm', 'skill_discovery', 'ladder_aog']
+2025-07-28 13:11:58,579 - src.main - INFO - Initializing plugin: event_bus
+2025-07-28 13:11:58,579 - src.main - INFO - Plugin event_bus setup complete
+2025-07-28 13:11:58,579 - src.main - INFO - Initializing plugin: semantic_memory
+2025-07-28 13:11:58,580 - src.plugins.semantic_memory_plugin - INFO - Gemini API configured for real embeddings
+2025-07-28 13:11:58,580 - src.plugins.semantic_memory_plugin - INFO - SemanticMemoryPlugin setup complete.
+2025-07-28 13:11:58,580 - src.main - INFO - Plugin semantic_memory setup complete
+2025-07-28 13:11:58,580 - src.main - INFO - Initializing plugin: semantic_fsm
+2025-07-28 13:11:58,601 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-28 13:11:58,601 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-07-28 13:12:01,871 - src.main - INFO - Plugin semantic_fsm setup complete
+2025-07-28 13:12:01,872 - src.main - INFO - Initializing plugin: skill_discovery
+2025-07-28 13:12:01,872 - src.main - INFO - Plugin skill_discovery setup complete
+2025-07-28 13:12:01,872 - src.main - INFO - Initializing plugin: ladder_aog
+2025-07-28 13:12:01,874 - src.plugins.ladder_aog_plugin - INFO - Initialized AOG graphs for task planning domain
+2025-07-28 13:12:01,874 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin initialized
+2025-07-28 13:12:01,874 - src.main - INFO - Plugin ladder_aog setup complete
+2025-07-28 13:12:01,874 - src.main - INFO - Super Alita agent initialized successfully
+2025-07-28 13:12:01,874 - src.main - INFO - Starting Super Alita agent...
+2025-07-28 13:12:01,875 - src.main - INFO - Starting plugin: event_bus
+2025-07-28 13:12:01,875 - src.plugins.event_bus_plugin - INFO - EventBus plugin started (passive component).
+2025-07-28 13:12:01,875 - src.main - INFO - Plugin event_bus started successfully
+2025-07-28 13:12:01,875 - src.main - INFO - Starting plugin: semantic_memory
+2025-07-28 13:12:01,998 - src.plugins.semantic_memory_plugin - INFO - Connected to ChromaDB collection 'alita_memory' at './data/chroma_db'
+2025-07-28 13:12:01,998 - src.main - INFO - Plugin semantic_memory started successfully
+2025-07-28 13:12:01,998 - src.main - INFO - Starting plugin: semantic_fsm
+2025-07-28 13:12:01,999 - src.main - INFO - Plugin semantic_fsm started successfully
+2025-07-28 13:12:01,999 - src.main - INFO - Starting plugin: skill_discovery
+2025-07-28 13:12:01,999 - src.main - INFO - Plugin skill_discovery started successfully
+2025-07-28 13:12:01,999 - src.main - INFO - Starting plugin: ladder_aog
+2025-07-28 13:12:01,999 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin started
+2025-07-28 13:12:02,000 - src.main - INFO - Plugin ladder_aog started successfully
+2025-07-28 13:12:02,000 - src.main - INFO - Super Alita agent started successfully
+2025-07-28 13:12:02,290 - src.plugins.semantic_memory_plugin - ERROR - Gemini embedding failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-07-28 13:12:02,291 - src.main - INFO - Shutting down Super Alita agent...
+2025-07-28 13:12:02,291 - src.main - INFO - Stopping plugin: event_bus
+2025-07-28 13:12:02,291 - src.plugins.event_bus_plugin - INFO - Shutting down EventBus plugin...
+2025-07-28 13:12:02,292 - src.main - INFO - Plugin event_bus stopped
+2025-07-28 13:12:02,292 - src.main - INFO - Stopping plugin: semantic_memory
+2025-07-28 13:12:02,292 - src.plugins.semantic_memory_plugin - INFO - SemanticMemoryPlugin shutting down.
+2025-07-28 13:12:02,292 - src.main - INFO - Plugin semantic_memory stopped
+2025-07-28 13:12:02,293 - src.main - INFO - Stopping plugin: semantic_fsm
+2025-07-28 13:12:02,293 - src.main - INFO - Plugin semantic_fsm stopped
+2025-07-28 13:12:02,294 - src.main - INFO - Stopping plugin: skill_discovery
+2025-07-28 13:12:02,294 - src.main - INFO - Plugin skill_discovery stopped
+2025-07-28 13:12:02,294 - src.main - INFO - Stopping plugin: ladder_aog
+2025-07-28 13:12:02,294 - src.plugins.ladder_aog_plugin - INFO - LADDER-AOG plugin shut down
+2025-07-28 13:12:02,295 - src.main - INFO - Plugin ladder_aog stopped
+2025-07-28 13:12:02,307 - src.main - INFO - Final genealogy exported to data\genealogy\final_genealogy_20250728_171202.graphml
+2025-07-28 13:12:02,308 - src.main - INFO - Super Alita agent shutdown complete

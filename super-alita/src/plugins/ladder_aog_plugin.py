@@ -1,39 +1,7 @@
 """
 LADDER-AOG Reasoning Plugin for Super Alita Agent.
 
-This plugin implements the LA    async def setup(self, event_bus, store, config):
-        """Initialize LADDER-AOG plugin with dependencies."""
-        await super().setup(event_bus, store, config)
-        self.config = config.get('ladder_aog', {})
-        
-        # Store reference to get semantic memory plugin later
-        self._event_bus_ref = event_bus
-        self._semantic_memory_plugin = None
-        
-        # Load or create AOG structures
-        await self._initialize_aog_graphs()
-        
-        logger.info("LADDER-AOG plugin initialized")
-    
-    async def start(self):
-        """Start the plugin and register event handlers."""
-        await super().start()
-        
-        # Try to get reference to semantic memory plugin for embeddings
-        try:
-            # This is a bit of a hack - in a real system, we'd have better plugin discovery
-            if hasattr(self._event_bus_ref, '_plugins'):
-                plugins = getattr(self._event_bus_ref, '_plugins', {})
-                self._semantic_memory_plugin = plugins.get('semantic_memory')
-        except Exception as e:
-            logger.warning(f"Could not get semantic memory plugin reference: {e}")
-        
-        # Subscribe to planning events
-        await self.subscribe("planning", self._handle_planning_request)
-        await self.subscribe("diagnosis", self._handle_diagnosis_request)
-        await self.subscribe("aog_update", self._handle_aog_update)
-        
-        logger.info("LADDER-AOG plugin started")n Algorithmic Decision-making for Dynamic Environments) 
+This plugin implements the LADDER (Language-driven Algorithmic Decision-making for Dynamic Environments) 
 approach with And-Or Graph (AOG) reasoning for planning and causal diagnosis.
 
 The plugin handles:
@@ -82,6 +50,7 @@ class MCTSNode:
         if self.parent is None or self.parent.visits == 0:
             return self.value / self.visits
         
+        import math
         exploration = exploration_weight * (
             (2 * math.log(self.parent.visits) / self.visits) ** 0.5
         )
@@ -264,6 +233,7 @@ class LADDERAOGPlugin(PluginInterface):
             
             # Emit planning decision event
             decision_event = PlanningDecisionEvent(
+                source_plugin="ladder_aog",
                 plan_id=session_id,
                 decision=json.dumps(plan) if plan else "no_plan_found",
                 confidence_score=self._calculate_plan_confidence(plan),
