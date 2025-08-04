@@ -62,27 +62,27 @@ class EvolutionEnvironment(ABC):
     @abstractmethod
     async def get_initial_state(self) -> Dict[str, Any]:
         """Get initial state for evolution."""
-        pass
+        raise NotImplementedError
     
     @abstractmethod
     async def get_available_actions(self, state: Dict[str, Any]) -> List[str]:
         """Get available actions for a given state."""
-        pass
+        raise NotImplementedError
     
     @abstractmethod
     async def apply_action(self, state: Dict[str, Any], action: str) -> Dict[str, Any]:
         """Apply action to state and return new state."""
-        pass
+        raise NotImplementedError
     
     @abstractmethod
     async def evaluate_state(self, state: Dict[str, Any]) -> float:
         """Evaluate fitness of a state."""
-        pass
+        raise NotImplementedError
     
     @abstractmethod
     async def is_terminal(self, state: Dict[str, Any]) -> bool:
         """Check if state is terminal."""
-        pass
+        raise NotImplementedError
 
 
 class SkillEvolutionEnvironment(EvolutionEnvironment):

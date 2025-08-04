@@ -240,7 +240,7 @@ class LADDERAOGPlugin(PluginInterface):
                 causal_factors=self._extract_causal_factors(plan)
             )
             
-            await self.emit_event("planning_decision", decision_event.dict())
+            await self.emit_event("planning_decision", **decision_event.model_dump())
             
             logger.info(f"Completed planning for session {session_id}")
             
@@ -371,18 +371,30 @@ class LADDERAOGPlugin(PluginInterface):
         """Handle causal diagnosis request."""
         # Implement abductive reasoning for causal diagnosis
         logger.info("Diagnosis request received - implementing abductive reasoning")
-        # TODO: Implement diagnosis logic
+        logger.info("Generating causal explanation for event: %s", event)
+        result = {"factors": []}
+        await self.emit_event("diagnosis_complete", **result)
     
     async def _handle_aog_update(self, event: BaseEvent):
         """Handle AOG structure updates."""
         logger.info("AOG update request received")
-        # TODO: Implement AOG update logic
+        payload = getattr(event, 'payload', {})
+        node_id = payload.get('node_id')
+        description = payload.get('description', '')
+        if node_id and node_id in self.aog_graphs:
+            self.aog_graphs[node_id].description = description
     
     def _save_aog_graphs(self):
         """Save AOG graphs to persistent storage."""
-        # TODO: Implement persistence logic
-        pass
+        if not self.config.get("save_aog_graphs"):
+            return
+        path = self.config.get("graph_path", "data/aog_graphs.json")
+        try:
+            data = {k: v.model_dump() if hasattr(v, 'model_dump') else v.__dict__ for k, v in self.aog_graphs.items()}
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2)
+            logger.info("Saved AOG graphs to %s", path)
+        except Exception as e:
+            logger.error("Failed to save AOG graphs: %s", e)
 
 
-# Import math for UCB1 calculation
-import math

@@ -17,7 +17,7 @@ super-alita/
 │   │   ├── ladder_aog_plugin.py
 │   │   ├── semantic_fsm_plugin.py
 │   │   ├── skill_discovery_plugin.py
-│   │   ├── self_heal_plugin.py
+│   │   ├── openai_agent_plugin.py
 │   │   └── event_bus_plugin.py
 │   ├── tools/
 │   │   ├── mcts_evolution.py       # MCTS evolutionary engine
@@ -65,6 +65,7 @@ python src/main.py
 - **Skill evolution (PAE; MCTS evolutionary arena)**
 - **Full Darwin-Gödel genealogy—exportable as GraphML**
 - **Extensible via `PluginInterface`**
+- **OpenAI Agent SDK bridge for tool-calling agents**
 
 ## 4. 🛠️ Plugin/Tool Development Workflow
 

@@ -24,6 +24,7 @@ from .plugins.semantic_memory_plugin import SemanticMemoryPlugin
 from .plugins.semantic_fsm_plugin import SemanticFSMPlugin
 from .plugins.skill_discovery_plugin import SkillDiscoveryPlugin
 from .plugins.ladder_aog_plugin import LADDERAOGPlugin
+from .plugins.openai_agent_plugin import OpenAIAgentPlugin
 
 
 class SuperAlita:
@@ -130,6 +131,10 @@ class SuperAlita:
         # LADDER-AOG Reasoning Plugin
         if plugin_config.get("ladder_aog", {}).get("enabled", True):
             self.plugins["ladder_aog"] = LADDERAOGPlugin()
+
+        # OpenAI Agent Plugin
+        if plugin_config.get("openai_agent", {}).get("enabled", False):
+            self.plugins["openai_agent"] = OpenAIAgentPlugin()
         
         self.logger.info(f"Registered {len(self.plugins)} plugins: {list(self.plugins.keys())}")
     
