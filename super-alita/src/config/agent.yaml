@@ -55,11 +55,10 @@ plugins:
       - "task_planning"
       - "causal_diagnosis"
     save_aog_graphs: true
-    
-  self_heal:
-    enabled: true
-    health_check_interval_seconds: 60
-    auto_restart_failed_plugins: true
+
+  openai_agent:
+    enabled: false
+    api_key: "${OPENAI_API_KEY}"
 
 # Genealogy settings
 genealogy:

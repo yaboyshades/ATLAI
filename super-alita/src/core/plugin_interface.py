@@ -20,14 +20,14 @@ class PluginInterface(ABC):
         self.event_bus: Optional[Any] = None
         self.store: Optional[Any] = None
         self.config: Optional[Dict[str, Any]] = None
-        self.is_running: bool = False
+        self._is_running: bool = False
         self._tasks: list = []
     
     @property
     @abstractmethod
     def name(self) -> str:
         """Return the unique name identifier for this plugin."""
-        pass
+        raise NotImplementedError("Plugin must define a unique name")
     
     @property
     def version(self) -> str:
@@ -68,7 +68,7 @@ class PluginInterface(ABC):
         - Start background tasks
         - Initialize plugin-specific resources
         """
-        self.is_running = True
+        self._is_running = True
     
     async def stop(self) -> None:
         """
@@ -77,7 +77,7 @@ class PluginInterface(ABC):
         Default implementation cancels all tasks and calls shutdown.
         Override if you need custom stop behavior.
         """
-        self.is_running = False
+        self._is_running = False
         
         # Cancel all background tasks
         for task in self._tasks:
@@ -95,13 +95,13 @@ class PluginInterface(ABC):
     async def shutdown(self) -> None:
         """
         Clean up plugin resources.
-        
+
         This is where you should:
         - Unsubscribe from events
         - Close connections
         - Save state if needed
         """
-        pass
+        raise NotImplementedError("Plugin must implement the 'shutdown' method")
     
     async def health_check(self) -> Dict[str, Any]:
         """
@@ -115,7 +115,7 @@ class PluginInterface(ABC):
         """
         return {
             "plugin": self.name,
-            "status": "healthy" if self.is_running else "stopped",
+            "status": "healthy" if self._is_running else "stopped",
             "version": self.version,
             "metrics": {},
             "issues": []
@@ -136,6 +136,11 @@ class PluginInterface(ABC):
         task = asyncio.create_task(coro)
         self._tasks.append(task)
         return task
+
+    @property
+    def is_running(self) -> bool:
+        """Whether the plugin is currently running."""
+        return self._is_running
     
     async def emit_event(self, event_type: str, **kwargs) -> None:
         """
