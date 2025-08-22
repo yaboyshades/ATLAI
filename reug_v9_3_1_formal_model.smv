@@ -1,0 +1,154 @@
+
+-- REUG v9.3.1 NuSMV Model for Formal Verification
+-- Verifies safety and liveness properties of the state machine
+
+MODULE main
+  VAR
+    state : {
+      READY,
+      ENGAGE,
+      UNDERSTAND,
+      EXECUTE_SCRIPT,
+      GENERATE,
+      CREATE_DYNAMIC_TOOL,
+      VALIDATE_TOOL_SCHEMA,
+      PARALLELIZE_TASKS,
+      AWAIT_PARALLEL_RESULTS,
+      ERROR_RECOVERY_UNIFIED,
+      COMPLETE,
+      SHUTDOWN
+    };
+
+    -- Execution bounds for liveness verification
+    step_budget : 0..100;
+    recursion_depth : 0..5;
+    tool_retry_count : 0..3;
+    timeout_reached : boolean;
+
+    -- State variables
+    user_input_ready : boolean;
+    intent_detected : boolean;
+    tools_routed : boolean;
+    script_parsed : boolean;
+    schema_valid : boolean;
+    parallel_ready : boolean;
+    error_occurred : boolean;
+    fatal_error : boolean;
+    recovery_success : boolean;
+
+  ASSIGN
+    init(state) := READY;
+    init(step_budget) := 100;
+    init(recursion_depth) := 0;
+    init(tool_retry_count) := 0;
+    init(timeout_reached) := FALSE;
+
+    next(state) :=
+      case
+        -- READY transitions
+        state = READY & user_input_ready : ENGAGE;
+        state = READY & !user_input_ready : READY;
+
+        -- ENGAGE transitions
+        state = ENGAGE & intent_detected & !error_occurred : UNDERSTAND;
+        state = ENGAGE & error_occurred & !fatal_error : ERROR_RECOVERY_UNIFIED;
+        state = ENGAGE & fatal_error : COMPLETE;
+
+        -- UNDERSTAND transitions
+        state = UNDERSTAND & script_parsed & !error_occurred : EXECUTE_SCRIPT;
+        state = UNDERSTAND & tools_routed & !script_parsed & !parallel_ready : GENERATE;
+        state = UNDERSTAND & parallel_ready & !error_occurred : PARALLELIZE_TASKS;
+        state = UNDERSTAND & error_occurred & !fatal_error : ERROR_RECOVERY_UNIFIED;
+        state = UNDERSTAND & fatal_error : COMPLETE;
+
+        -- EXECUTE_SCRIPT transitions
+        state = EXECUTE_SCRIPT & !error_occurred & !timeout_reached & recursion_depth < 5 & step_budget > 0 : GENERATE;
+        state = EXECUTE_SCRIPT & (error_occurred | timeout_reached | recursion_depth >= 5 | step_budget <= 0) : ERROR_RECOVERY_UNIFIED;
+
+        -- VALIDATE_TOOL_SCHEMA transitions
+        state = VALIDATE_TOOL_SCHEMA & schema_valid : COMPLETE;
+        state = VALIDATE_TOOL_SCHEMA & !schema_valid : ERROR_RECOVERY_UNIFIED;
+
+        -- PARALLELIZE_TASKS transitions
+        state = PARALLELIZE_TASKS & !error_occurred : AWAIT_PARALLEL_RESULTS;
+        state = PARALLELIZE_TASKS & error_occurred : ERROR_RECOVERY_UNIFIED;
+
+        -- AWAIT_PARALLEL_RESULTS transitions
+        state = AWAIT_PARALLEL_RESULTS & !timeout_reached : GENERATE;
+        state = AWAIT_PARALLEL_RESULTS & timeout_reached : ERROR_RECOVERY_UNIFIED;
+
+        -- GENERATE transitions
+        state = GENERATE & !error_occurred : COMPLETE;
+        state = GENERATE & error_occurred & !fatal_error : ERROR_RECOVERY_UNIFIED;
+        state = GENERATE & fatal_error : COMPLETE;
+
+        -- ERROR_RECOVERY_UNIFIED transitions
+        state = ERROR_RECOVERY_UNIFIED & recovery_success & tool_retry_count < 3 : UNDERSTAND;
+        state = ERROR_RECOVERY_UNIFIED & (!recovery_success | tool_retry_count >= 3) : COMPLETE;
+
+        -- COMPLETE transitions
+        state = COMPLETE : READY;
+
+        -- SHUTDOWN (terminal state)
+        state = SHUTDOWN : SHUTDOWN;
+
+        TRUE : state;
+      esac;
+
+    -- Step budget decreases with each transition
+    next(step_budget) :=
+      case
+        step_budget > 0 : step_budget - 1;
+        TRUE : step_budget;
+      esac;
+
+    -- Recursion depth tracking
+    next(recursion_depth) :=
+      case
+        state = UNDERSTAND & next(state) = EXECUTE_SCRIPT : recursion_depth + 1;
+        state = EXECUTE_SCRIPT & next(state) != EXECUTE_SCRIPT : recursion_depth - 1;
+        TRUE : recursion_depth;
+      esac;
+
+    -- Tool retry count tracking
+    next(tool_retry_count) :=
+      case
+        state = ERROR_RECOVERY_UNIFIED & error_occurred : tool_retry_count + 1;
+        state = COMPLETE : 0;
+        TRUE : tool_retry_count;
+      esac;
+
+-- FORMAL VERIFICATION PROPERTIES
+
+-- Safety Property 1: No Deadlock
+-- All states (except SHUTDOWN) can eventually return to READY
+LTLSPEC G (state != SHUTDOWN -> F (state = READY));
+
+-- Safety Property 2: Error Recovery
+-- All errors lead to recovery or completion
+LTLSPEC G (error_occurred -> F (state = ERROR_RECOVERY_UNIFIED | state = COMPLETE));
+
+-- Safety Property 3: Bounded Execution
+-- Step budget is always enforced
+LTLSPEC G (step_budget >= 0);
+
+-- Safety Property 4: Recursion Limit
+-- Recursion depth never exceeds limit
+LTLSPEC G (recursion_depth <= 5);
+
+-- Liveness Property 1: Progress Guarantee
+-- If there's input and budget, progress is made
+LTLSPEC G (user_input_ready & step_budget > 0 -> F (state = COMPLETE));
+
+-- Liveness Property 2: Convergence Detection
+-- Tool retry limit prevents infinite loops
+LTLSPEC G (tool_retry_count <= 3);
+
+-- Liveness Property 3: Recovery Success
+-- Error recovery eventually succeeds or fails definitively
+LTLSPEC G (state = ERROR_RECOVERY_UNIFIED -> F (recovery_success | state = COMPLETE));
+
+-- Invariant: State machine determinism
+-- State transitions are deterministic given inputs
+INVARSPEC (step_budget > 0 & !timeout_reached) ->
+          (state = READY -> user_input_ready -> next(state) = ENGAGE);

@@ -1,0 +1,101 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "RetrieverAgent",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.plugins.retriever_agent",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "ALITA_ENABLE_EXPANDER": "1",
+                "ALITA_ENABLE_DENSE": "1",
+                "ALITA_LOG_LEVEL": "DEBUG",
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "args": []
+        },
+        {
+            "name": "SynthAgent",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.plugins.synth_agent",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "ALITA_ENABLE_LLM_VERIFIER": "0",
+                "ALITA_LLM_PROVIDER": "gemini",
+                "ALITA_SYNTH_AUDIENCE": "professional",
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "args": []
+        },
+        {
+            "name": "MCP Server",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.mcp.server",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "ALITA_MCP_PORT": "3000",
+                "ALITA_LOG_LEVEL": "DEBUG",
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "args": []
+        },
+        {
+            "name": "Main Super Alita",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.main",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "ALITA_ENABLE_ALL": "1",
+                "ALITA_LOG_LEVEL": "INFO",
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "args": []
+        },
+        {
+            "name": "Test Runner",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": false,
+            "args": [
+                "-v",
+                "--tb=short",
+                "tests/"
+            ]
+        },
+        {
+            "name": "Debug Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": false,
+            "stopOnEntry": false
+        }
+    ]
+}

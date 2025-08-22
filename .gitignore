@@ -1,0 +1,501 @@
+
+# Python - Enhanced cache and compiled file patterns
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.dll
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Python bytecode and compiled extensions (comprehensive)
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.dylib
+
+# Python cache directories (all variations)
+__pycache__/
+*/__pycache__/
+**/__pycache__/
+.pytest_cache/
+*/.pytest_cache/
+**/.pytest_cache/
+.ruff_cache/
+*/.ruff_cache/
+**/.ruff_cache/
+.mypy_cache/
+*/.mypy_cache/
+**/.mypy_cache/
+.coverage
+.coverage.*
+.cache/
+*/.cache/
+**/.cache/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+.idea/
+
+# Super Alita Secrets
+.env.secrets
+.env.secrets.*
+!.env.secrets.template
+
+# Redis data
+dump.rdb
+
+# Logs
+*.log
+logs/
+agent_*.log
+super_alita.log
+monitoring*.log
+
+# Data directories
+data/
+!data/.gitkeep
+
+# Backup directories
+backup_*/
+backup_*
+staging_deployments/
+staging_deployment*/
+
+# Cache files (comprehensive coverage)
+.ruff_cache/
+*/.ruff_cache/
+**/.ruff_cache/
+.pytest_cache/
+*/.pytest_cache/
+**/.pytest_cache/
+.mypy_cache/
+*/.mypy_cache/
+**/.mypy_cache/
+.coverage
+.coverage.*
+.cache/
+*/.cache/
+**/.cache/
+.tox/
+.nox/
+htmlcov/
+cover/
+
+# Node.js cache (if any JavaScript components)
+node_modules/
+**/node_modules/
+.npm/
+.yarn/
+yarn-error.log
+.pnpm-store/
+
+# VS Code
+.vscode/settings.json
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.tmp
+*.temp
+nul
+
+# Temporary files
+update.txt
+
+# === SUPER ALITA SPECIFIC EXCLUSIONS ===
+
+# Experimental and test files - these should NOT be in main repo
+test_*.py
+*_test.py
+demo_*.py
+mock_*.py
+quick_*.py
+simple_*.py
+validate_*.py
+run_*.py
+analyze_*.py
+audit_*.py
+check_*.py
+compliance_*.py
+debug_*.py
+fix_*.py
+inject_*.py
+integrate_*.py
+launch_*.py
+monitor_*.py
+performance_*.py
+prove_*.py
+reliability_*.py
+send_*.py
+setup_*.py
+start_*.py
+streamlit_*.py
+system_*.py
+throughput_*.py
+unified_*.py
+chemistry_*.py
+
+# Status and mission files - documentation spam
+*_COMPLETE.md
+*_SUCCESS.md
+*_ACCOMPLISHED.md
+MISSION_*.md
+STATUS.md
+TASK_*.md
+API_*.md
+ARCHITECTURE_*.md
+BOUNTY_*.md
+COARCHITECT_*.md
+CODE_*.md
+COGNITIVE_*.md
+COMPREHENSIVE_*.md
+COPILOT_*.md
+DEPLOY_*.md
+ENHANCEMENT_*.md
+EVENTBUS_*.md
+EXTENSIBILITY_*.md
+FRAMEWORK_*.md
+GEMINI_*.md
+GOOGLE_*.md
+HANDOFF_*.md
+HARDENED_*.md
+HIERARCHICAL_*.md
+IMPLEMENTATION_*.md
+INTEGRATION_*.md
+LADDER_*.md
+LAUNCHER_*.md
+MEMURAI_*.md
+MINIMAL_*.md
+NEURAL_*.md
+PATCH_*.md
+PILOT_*.md
+POLISH_*.md
+PROFESSIONAL_*.md
+PYTHONIC_*.md
+RACE_*.md
+READY_*.md
+SELF_*.md
+SYNTAX_*.md
+TESTING_*.md
+THINKING_*.md
+ULTIMATE_*.md
+UNIFIED_*.md
+
+# Batch and shell files - Windows specific
+*.bat
+*.sh
+
+# Python artifacts that shouldn't be tracked
+*.py[cod]
+__pycache__/
+.alita_tools_tmp/
+
+# Reports and generated files
+*_report.json
+integration_readiness_report*.json
+preprocessor_integration_report*.json
+validation_report.json
+test_dynamic_discovery_results.json
+
+# Configuration samples
+plugins.yaml.sample
+.env.example
+
+# External projects/submodules that don't belong
+Perplexica/
+AgentBench/
+mcp-vscode-examples/
+super-alita-repo/
+patch_000x_sensory_drive/
+
+# Notebooks and prototyping
+notebooks/
+prompts/
+proto/
+
+# Generated documentation
+diagnostics/
+
+# MCP server files (separate from core)
+mcp_server.py
+demo_mcp_server.py
+
+# Chat implementations (examples, not core)
+chat.py
+chat_minimal.py
+gui_super_alita.py
+streamlit_*.py
+
+# Config directories that are environment-specific
+config/
+
+# Memory and data that's instance-specific
+memory/
+
+# Docker and deployment configs
+docker-compose.yml
+Makefile
+
+# === LARGE FILES & BINARIES ===
+
+# VS Code extension binaries and packages
+*.vsix
+automatalabs.copilot-mcp-*.vsix
+
+# Large binary files and native extensions
+*.dll
+*.exe
+*.pyd
+*.chm
+*.so
+*.dylib
+ruff.exe
+
+# Large data files
+*.data.json
+channels.data.json
+__init__.data.json
+_VariableFunctions.data.json
+
+# Native Python extensions
+*openblas*.dll
+_core.cp*.pyd
+_pydantic_core.cp*.pyd
+native.cp*.pyd
+_multiarray_umath.cp*.pyd
+_sparsetools.cp*.pyd
+cython_special.cp*.pyd
+*__mypyc.cp*.pyd
+_fmm_core.cp*.pyd
+
+# Windows Help files
+*.chm
+PyWin32.chm
+
+# Virtual environment directories (comprehensive)
+.venv/
+venv/
+env/
+ENV/
+.env/
+.virtualenv/
+
+# Archive and compression files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tar.bz2
+*.tbz2
+*.tar.xz
+*.txz
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+*.lz
+*.lzma
+
+# Binary and executable files
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+*.app
+*.deb
+*.rpm
+*.msi
+*.dmg
+*.pkg
+
+# VS Code extension files
+*.vsix
+
+# Backup and temporary files
+*.backup
+*.bak
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Large data and model files
+*.model
+*.h5
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+
+# Node modules and package directories
+node_modules/
+bower_components/
+
+# Build artifacts and distributions
+build/
+dist/
+target/
+out/
+*.egg-info/
+tools/generated/
+
+# Cache directories
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.cache/
+.tox/
+
+# IDE and editor files
+.idea/
+.vscode/settings.json
+*.sublime-project
+*.sublime-workspace

@@ -1,0 +1,842 @@
+{
+  "start_time": "2025-08-20T13:50:09.121401+00:00",
+  "test_results": {
+    "api_endpoints": {
+      "/api/kg/policy": {
+        "status_code": 200,
+        "response": {
+          "policies": [
+            {
+              "id": "policy_001",
+              "content": "Prefer high-confidence decisions in critical situations",
+              "confidence": 0.9,
+              "timestamp": "2025-08-20T13:50:11.201953+00:00",
+              "category": "decision_making"
+            },
+            {
+              "id": "policy_002",
+              "content": "Learn from hypothesis confirmations and update strategies",
+              "confidence": 0.85,
+              "timestamp": "2025-08-20T13:50:11.201973+00:00",
+              "category": "learning"
+            }
+          ],
+          "count": 2
+        }
+      },
+      "/api/kg/personality": {
+        "status_code": 200,
+        "response": {
+          "latest": {
+            "id": "personality_001",
+            "timestamp": "2025-08-20T13:50:13.241604+00:00",
+            "risk_tolerance": 0.6,
+            "confidence_threshold": 0.75,
+            "learning_rate": 0.12
+          },
+          "recent": [
+            {
+              "id": "personality_001",
+              "timestamp": "2025-08-20T13:50:13.241613+00:00",
+              "risk_tolerance": 0.6,
+              "confidence_threshold": 0.75,
+              "learning_rate": 0.12
+            }
+          ],
+          "trend": [
+            {
+              "timestamp": "2025-08-20T13:50:13.241615+00:00",
+              "risk_tolerance": 0.6,
+              "confidence_threshold": 0.75,
+              "learning_rate": 0.12
+            }
+          ]
+        }
+      },
+      "/api/kg/consolidation": {
+        "status_code": 200,
+        "response": {
+          "consolidations": [
+            {
+              "id": "consolidation_001",
+              "content": "High confidence decisions lead to better outcomes in critical situations",
+              "confidence": 0.88,
+              "timestamp": "2025-08-20T13:50:15.290301+00:00",
+              "session_count": 5,
+              "insight_strength": 0.75,
+              "related": []
+            }
+          ],
+          "count": 1
+        }
+      },
+      "/health": {
+        "status_code": 200,
+        "response": {
+          "status": "healthy",
+          "timestamp": "2025-08-20T13:50:17.350328+00:00",
+          "neo4j_connected": false
+        }
+      },
+      "/metrics": {
+        "status_code": 200,
+        "response": "# HELP sa_api_requests_total Total API requests\n# TYPE sa_api_requests_total counter\nsa_api_requests_total{endpoint=\"policy\"} 42\nsa_api_requests_total{endpoint=\"personality\"} 15\nsa_api_requests_total{endpoint=\"consolidation\"} 8\n# HELP sa_api_response_time_seconds API response time\n# TYPE sa_api_response_time_seconds histogram\nsa_api_response_time_seconds_bucket{endpoint=\"policy\",le=\"0.1\"} 35\nsa_api_response_time_seconds_bucket{endpoint=\"policy\",le=\"0.5\"} 42\nsa_api_response_time_seconds_bucket{endpoint=\"policy\",le=\"+Inf\"} 42"
+      }
+    },
+    "decision_confidence": [
+      {
+        "response": "I encountered some issues: high_confidence_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); high_confidence_create: Plugin high_confidence not found; medium_confidence_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1)",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.001322,
+        "state_transitions": 4,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "high_confidence_analyze",
+              "description": "Analysis tool from high_confidence",
+              "plugin_name": "high_confidence",
+              "confidence": 0.8893131442190724
+            },
+            {
+              "name": "high_confidence_create",
+              "description": "Creation tool from high_confidence",
+              "plugin_name": "high_confidence",
+              "confidence": 0.7990437052552034
+            },
+            {
+              "name": "medium_confidence_analyze",
+              "description": "Analysis tool from medium_confidence",
+              "plugin_name": "medium_confidence",
+              "confidence": 0.6501675908900435
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I've processed your general request using success, error, step_results. The task has been completed.",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000701,
+        "state_transitions": 8,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I've processed your debug request using success, error, step_results. The task has been completed.",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000517,
+        "state_transitions": 12,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "high_confidence_analyze",
+              "description": "Analysis tool from high_confidence",
+              "plugin_name": "high_confidence",
+              "confidence": 0.84340180070768
+            },
+            {
+              "name": "high_confidence_create",
+              "description": "Creation tool from high_confidence",
+              "plugin_name": "high_confidence",
+              "confidence": 0.8693744728669427
+            },
+            {
+              "name": "medium_confidence_analyze",
+              "description": "Analysis tool from medium_confidence",
+              "plugin_name": "medium_confidence",
+              "confidence": 0.5652381962813567
+            }
+          ],
+          "intent": "debug",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I've processed your explain request using success, error, step_results. The task has been completed.",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000447,
+        "state_transitions": 16,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "high_confidence_analyze",
+              "description": "Analysis tool from high_confidence",
+              "plugin_name": "high_confidence",
+              "confidence": 0.8430120225346434
+            },
+            {
+              "name": "high_confidence_create",
+              "description": "Creation tool from high_confidence",
+              "plugin_name": "high_confidence",
+              "confidence": 0.8235592890307124
+            },
+            {
+              "name": "medium_confidence_analyze",
+              "description": "Analysis tool from medium_confidence",
+              "plugin_name": "medium_confidence",
+              "confidence": 0.6470024867369741
+            }
+          ],
+          "intent": "explain",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I've processed your create request using success, error, step_results. The task has been completed.",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000537,
+        "state_transitions": 20,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "high_confidence_analyze",
+              "description": "Analysis tool from high_confidence",
+              "plugin_name": "high_confidence",
+              "confidence": 0.9141250248430899
+            },
+            {
+              "name": "high_confidence_create",
+              "description": "Creation tool from high_confidence",
+              "plugin_name": "high_confidence",
+              "confidence": 0.7873969802036602
+            },
+            {
+              "name": "medium_confidence_analyze",
+              "description": "Analysis tool from medium_confidence",
+              "plugin_name": "medium_confidence",
+              "confidence": 0.6463123422731237
+            }
+          ],
+          "intent": "create",
+          "transitions": 3
+        }
+      }
+    ],
+    "learning_velocity": [
+      {
+        "response": "I encountered some issues: adaptive_learner_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); adaptive_learner_create: Plugin adaptive_learner not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000419,
+        "state_transitions": 4,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "adaptive_learner_analyze",
+              "description": "Analysis tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.3741813759032879
+            },
+            {
+              "name": "adaptive_learner_create",
+              "description": "Creation tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.5986218912209638
+            }
+          ],
+          "intent": "analyze",
+          "transitions": 3
+        },
+        "response_time": 0.0004267692565917969
+      },
+      {
+        "response": "I encountered some issues: adaptive_learner_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); adaptive_learner_create: Plugin adaptive_learner not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000428,
+        "state_transitions": 8,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "adaptive_learner_analyze",
+              "description": "Analysis tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.46200429258307796
+            },
+            {
+              "name": "adaptive_learner_create",
+              "description": "Creation tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.31395966470027964
+            }
+          ],
+          "intent": "analyze",
+          "transitions": 3
+        },
+        "response_time": 0.00043654441833496094
+      },
+      {
+        "response": "I encountered some issues: adaptive_learner_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); adaptive_learner_create: Plugin adaptive_learner not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000479,
+        "state_transitions": 12,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "adaptive_learner_analyze",
+              "description": "Analysis tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.31446544997314346
+            },
+            {
+              "name": "adaptive_learner_create",
+              "description": "Creation tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.5882201580872399
+            }
+          ],
+          "intent": "search",
+          "transitions": 3
+        },
+        "response_time": 0.0004885196685791016
+      },
+      {
+        "response": "I encountered some issues: adaptive_learner_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); adaptive_learner_create: Plugin adaptive_learner not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000473,
+        "state_transitions": 16,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "adaptive_learner_analyze",
+              "description": "Analysis tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.37206468259297565
+            },
+            {
+              "name": "adaptive_learner_create",
+              "description": "Creation tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.49405884856625
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        },
+        "response_time": 0.0004832744598388672
+      },
+      {
+        "response": "I encountered some issues: adaptive_learner_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); adaptive_learner_create: Plugin adaptive_learner not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000484,
+        "state_transitions": 20,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "adaptive_learner_analyze",
+              "description": "Analysis tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.47062021657002173
+            },
+            {
+              "name": "adaptive_learner_create",
+              "description": "Creation tool from adaptive_learner",
+              "plugin_name": "adaptive_learner",
+              "confidence": 0.30471299450869105
+            }
+          ],
+          "intent": "analyze",
+          "transitions": 3
+        },
+        "response_time": 0.0004937648773193359
+      }
+    ],
+    "hypothesis_lifecycle": [
+      {
+        "response": "I encountered some issues: hypothesis_tester_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); hypothesis_tester_create: Plugin hypothesis_tester not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000451,
+        "state_transitions": 4,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "hypothesis_tester_analyze",
+              "description": "Analysis tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.6986348717190267
+            },
+            {
+              "name": "hypothesis_tester_create",
+              "description": "Creation tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.535005447871914
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: hypothesis_tester_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); hypothesis_tester_create: Plugin hypothesis_tester not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000477,
+        "state_transitions": 8,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "hypothesis_tester_analyze",
+              "description": "Analysis tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.7564106111279767
+            },
+            {
+              "name": "hypothesis_tester_create",
+              "description": "Creation tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.7133800384360308
+            }
+          ],
+          "intent": "debug",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: hypothesis_tester_analyze: Code validation failed: Syntax error: expected 'else' after 'if' expression (<unknown>, line 1); hypothesis_tester_create: Plugin hypothesis_tester not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000436,
+        "state_transitions": 12,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "hypothesis_tester_analyze",
+              "description": "Analysis tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.5645208615455463
+            },
+            {
+              "name": "hypothesis_tester_create",
+              "description": "Creation tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.5534292329889503
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: hypothesis_tester_analyze: Code validation failed: Syntax error: expected 'else' after 'if' expression (<unknown>, line 1); hypothesis_tester_create: Plugin hypothesis_tester not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000427,
+        "state_transitions": 16,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "hypothesis_tester_analyze",
+              "description": "Analysis tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.6948786458760926
+            },
+            {
+              "name": "hypothesis_tester_create",
+              "description": "Creation tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.6636311512090125
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: hypothesis_tester_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); hypothesis_tester_create: Plugin hypothesis_tester not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000526,
+        "state_transitions": 20,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "hypothesis_tester_analyze",
+              "description": "Analysis tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.6242672946430036
+            },
+            {
+              "name": "hypothesis_tester_create",
+              "description": "Creation tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.5626352206752007
+            }
+          ],
+          "intent": "debug",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: hypothesis_tester_analyze: Code validation failed: Syntax error: unterminated string literal (detected at line 1) (<unknown>, line 1); hypothesis_tester_create: Plugin hypothesis_tester not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000275,
+        "state_transitions": 24,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "hypothesis_tester_analyze",
+              "description": "Analysis tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.6724031301700688
+            },
+            {
+              "name": "hypothesis_tester_create",
+              "description": "Creation tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.631699535563984
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: hypothesis_tester_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); hypothesis_tester_create: Plugin hypothesis_tester not found",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000494,
+        "state_transitions": 28,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "hypothesis_tester_analyze",
+              "description": "Analysis tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.6939839479359852
+            },
+            {
+              "name": "hypothesis_tester_create",
+              "description": "Creation tool from hypothesis_tester",
+              "plugin_name": "hypothesis_tester",
+              "confidence": 0.5744563327602046
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      }
+    ],
+    "personality_drift": [
+      {
+        "response": "I encountered some issues: creative_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); creative_assistant_create: Plugin creative_assistant not found; analytical_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1)",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000563,
+        "state_transitions": 4,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "creative_assistant_analyze",
+              "description": "Analysis tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.715522557550833
+            },
+            {
+              "name": "creative_assistant_create",
+              "description": "Creation tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.7588989826185772
+            },
+            {
+              "name": "analytical_assistant_analyze",
+              "description": "Analysis tool from analytical_assistant",
+              "plugin_name": "analytical_assistant",
+              "confidence": 0.800891108923723
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: creative_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); creative_assistant_create: Plugin creative_assistant not found; analytical_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1)",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000573,
+        "state_transitions": 8,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "creative_assistant_analyze",
+              "description": "Analysis tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.7948866965095889
+            },
+            {
+              "name": "creative_assistant_create",
+              "description": "Creation tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.801219646608233
+            },
+            {
+              "name": "analytical_assistant_analyze",
+              "description": "Analysis tool from analytical_assistant",
+              "plugin_name": "analytical_assistant",
+              "confidence": 0.9271450500490823
+            }
+          ],
+          "intent": "analyze",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: creative_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); creative_assistant_create: Plugin creative_assistant not found; analytical_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1)",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000778,
+        "state_transitions": 12,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "creative_assistant_analyze",
+              "description": "Analysis tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.830747119316905
+            },
+            {
+              "name": "creative_assistant_create",
+              "description": "Creation tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.7432482227717556
+            },
+            {
+              "name": "analytical_assistant_analyze",
+              "description": "Analysis tool from analytical_assistant",
+              "plugin_name": "analytical_assistant",
+              "confidence": 0.8251978780687335
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: creative_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); creative_assistant_create: Plugin creative_assistant not found; analytical_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1)",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000575,
+        "state_transitions": 16,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "creative_assistant_analyze",
+              "description": "Analysis tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.8493335571432031
+            },
+            {
+              "name": "creative_assistant_create",
+              "description": "Creation tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.6336004742968698
+            },
+            {
+              "name": "analytical_assistant_analyze",
+              "description": "Analysis tool from analytical_assistant",
+              "plugin_name": "analytical_assistant",
+              "confidence": 0.9416124565852322
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: creative_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); creative_assistant_create: Plugin creative_assistant not found; analytical_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1)",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000594,
+        "state_transitions": 20,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "creative_assistant_analyze",
+              "description": "Analysis tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.6349761705711306
+            },
+            {
+              "name": "creative_assistant_create",
+              "description": "Creation tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.8393215727703567
+            },
+            {
+              "name": "analytical_assistant_analyze",
+              "description": "Analysis tool from analytical_assistant",
+              "plugin_name": "analytical_assistant",
+              "confidence": 0.8072326849708106
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: creative_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); creative_assistant_create: Plugin creative_assistant not found; analytical_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1)",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000556,
+        "state_transitions": 24,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "creative_assistant_analyze",
+              "description": "Analysis tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.8786201758495282
+            },
+            {
+              "name": "creative_assistant_create",
+              "description": "Creation tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.8451878168843325
+            },
+            {
+              "name": "analytical_assistant_analyze",
+              "description": "Analysis tool from analytical_assistant",
+              "plugin_name": "analytical_assistant",
+              "confidence": 0.8413839292081552
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: creative_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); creative_assistant_create: Plugin creative_assistant not found; analytical_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1)",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.000578,
+        "state_transitions": 28,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "creative_assistant_analyze",
+              "description": "Analysis tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.715515437077809
+            },
+            {
+              "name": "creative_assistant_create",
+              "description": "Creation tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.6175983883106843
+            },
+            {
+              "name": "analytical_assistant_analyze",
+              "description": "Analysis tool from analytical_assistant",
+              "plugin_name": "analytical_assistant",
+              "confidence": 0.8152098942477592
+            }
+          ],
+          "intent": "create",
+          "transitions": 3
+        }
+      },
+      {
+        "response": "I encountered some issues: creative_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1); creative_assistant_create: Plugin creative_assistant not found; analytical_assistant_analyze: Code validation failed: Syntax error: invalid syntax (<unknown>, line 1)",
+        "success": true,
+        "session_id": null,
+        "turn_id": null,
+        "execution_time": 0.00056,
+        "state_transitions": 32,
+        "error_count": 0,
+        "metadata": {
+          "tools_used": [
+            {
+              "name": "creative_assistant_analyze",
+              "description": "Analysis tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.6441025207222407
+            },
+            {
+              "name": "creative_assistant_create",
+              "description": "Creation tool from creative_assistant",
+              "plugin_name": "creative_assistant",
+              "confidence": 0.7712832793316147
+            },
+            {
+              "name": "analytical_assistant_analyze",
+              "description": "Analysis tool from analytical_assistant",
+              "plugin_name": "analytical_assistant",
+              "confidence": 0.8598242261823766
+            }
+          ],
+          "intent": "general",
+          "transitions": 3
+        }
+      }
+    ],
+    "stress_test": {
+      "total_requests": 20,
+      "successes": 20,
+      "failures": 0,
+      "duration": 0.20283222198486328
+    }
+  },
+  "end_time": "2025-08-20T13:50:27.542594+00:00",
+  "status": "completed"
+}

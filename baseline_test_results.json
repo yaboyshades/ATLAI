@@ -1,0 +1,24 @@
+{
+  "passed": 3,
+  "failed": 0,
+  "details": [
+    {
+      "test": "API Server Connectivity",
+      "passed": true,
+      "message": "Health check returned: {'status': 'healthy', 'timestamp': '2025-08-20T13:48:39.248802+00:00', 'neo4j_connected': False}",
+      "timestamp": "2025-08-20T13:48:39.249924+00:00"
+    },
+    {
+      "test": "State Machine Multi-Turn",
+      "passed": true,
+      "message": "Turn results: True, True, True",
+      "timestamp": "2025-08-20T13:48:39.252224+00:00"
+    },
+    {
+      "test": "Tool Routing Safety",
+      "passed": true,
+      "message": "Tool routing handled problematic plugins: True",
+      "timestamp": "2025-08-20T13:48:39.253049+00:00"
+    }
+  ]
+}
